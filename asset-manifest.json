@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/mbravo10.github.io/static/css/main.4b62a49b.chunk.css",
+    "main.js": "/mbravo10.github.io/static/js/main.7c8227f2.chunk.js",
+    "main.js.map": "/mbravo10.github.io/static/js/main.7c8227f2.chunk.js.map",
+    "runtime-main.js": "/mbravo10.github.io/static/js/runtime-main.715eaca0.js",
+    "runtime-main.js.map": "/mbravo10.github.io/static/js/runtime-main.715eaca0.js.map",
+    "static/js/2.b7f4dae0.chunk.js": "/mbravo10.github.io/static/js/2.b7f4dae0.chunk.js",
+    "static/js/2.b7f4dae0.chunk.js.map": "/mbravo10.github.io/static/js/2.b7f4dae0.chunk.js.map",
+    "static/js/3.2c61389f.chunk.js": "/mbravo10.github.io/static/js/3.2c61389f.chunk.js",
+    "static/js/3.2c61389f.chunk.js.map": "/mbravo10.github.io/static/js/3.2c61389f.chunk.js.map",
+    "index.html": "/mbravo10.github.io/index.html",
+    "static/css/main.4b62a49b.chunk.css.map": "/mbravo10.github.io/static/css/main.4b62a49b.chunk.css.map",
+    "static/js/2.b7f4dae0.chunk.js.LICENSE.txt": "/mbravo10.github.io/static/js/2.b7f4dae0.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.715eaca0.js",
+    "static/js/2.b7f4dae0.chunk.js",
+    "static/css/main.4b62a49b.chunk.css",
+    "static/js/main.7c8227f2.chunk.js"
+  ]
+}
