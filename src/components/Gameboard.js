@@ -1,12 +1,31 @@
 import './styles/gameboard.css';
 import { Container, Jumbotron, Button, Row }from 'react-bootstrap';
+import React, { useState } from 'react';
+import Square from './Square';
 
 
-export default function Gameboard(props){
-    const arrayElemets = props.gameArray;
-    const ticItems = arrayElemets.map( x => <div class="box"> {x} </div> );
-    
-    return(
+export default class Gameboard extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+          value: Array(9).fill(null),
+        }
+    }
+
+    handleClick(i){
+        const square = this.state.value.slice();
+        square[i] = 'X';
+        this.setState({value : square});
+    }
+
+    renderSquare(i){
+        return(
+        <Square val={this.state.value[i]} onClick={() => this.handleClick(i)}/> 
+        )
+    }
+
+    render(){
+        return(
         <Container>
             <Jumbotron>
                 <h1>Hello, world!</h1>
@@ -20,9 +39,17 @@ export default function Gameboard(props){
             </Jumbotron>
             <Row className="justify-content-md-center">
                 <div class="game-board">
-                    {ticItems}
+                    {this.renderSquare(1)}
+                    {this.renderSquare(2)}
+                    {this.renderSquare(3)}
+                    {this.renderSquare(4)}
+                    {this.renderSquare(5)}
+                    {this.renderSquare(6)}
+                    {this.renderSquare(7)}
+                    {this.renderSquare(8)}
+                    {this.renderSquare(9)}
                 </div>
             </Row>
         </Container>
-    );
+    )};
 }
