@@ -1,6 +1,6 @@
 import './styles/gameboard.css';
-import { Container, Jumbotron, Button, Row }from 'react-bootstrap';
-import React, { useState } from 'react';
+import { Container, Jumbotron, Button, Row, Col }from 'react-bootstrap';
+import React from 'react';
 import Square from './Square';
 
 
@@ -26,7 +26,7 @@ export default class Gameboard extends React.Component{
 
     render(){
         return(
-        <Container>
+        <Container fluid="true">
             <Jumbotron>
                 <h1>Hello, world!</h1>
                 <p>
@@ -38,6 +38,7 @@ export default class Gameboard extends React.Component{
                 </p>
             </Jumbotron>
             <Row className="justify-content-md-center">
+                <Col md="auto">
                 <div class="game-board">
                     {this.renderSquare(1)}
                     {this.renderSquare(2)}
@@ -49,6 +50,7 @@ export default class Gameboard extends React.Component{
                     {this.renderSquare(8)}
                     {this.renderSquare(9)}
                 </div>
+                </Col>
             </Row>
         </Container>
     )};
