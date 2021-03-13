@@ -9,13 +9,16 @@ export default class Gameboard extends React.Component{
         super(props);
         this.state = {
           value: Array(9).fill(null),
+          isXsTurn: true,
         }
     }
 
     handleClick(i){
         const square = this.state.value.slice();
-        square[i] = 'X';
-        this.setState({value : square});
+        this.state.isXsTurn ? square[i] = 'X' : square[i] = 'O';
+        this.setState({ value : square, 
+                        isXsTurn: !(this.state.isXsTurn) 
+                    });
     }
 
     renderSquare(i){
@@ -39,17 +42,17 @@ export default class Gameboard extends React.Component{
             </Jumbotron>
             <Row className="justify-content-md-center">
                 <Col md="auto">
-                <div class="game-board">
-                    {this.renderSquare(1)}
-                    {this.renderSquare(2)}
-                    {this.renderSquare(3)}
-                    {this.renderSquare(4)}
-                    {this.renderSquare(5)}
-                    {this.renderSquare(6)}
-                    {this.renderSquare(7)}
-                    {this.renderSquare(8)}
-                    {this.renderSquare(9)}
-                </div>
+                    <div class="game-board">
+                        {this.renderSquare(1)}
+                        {this.renderSquare(2)}
+                        {this.renderSquare(3)}
+                        {this.renderSquare(4)}
+                        {this.renderSquare(5)}
+                        {this.renderSquare(6)}
+                        {this.renderSquare(7)}
+                        {this.renderSquare(8)}
+                        {this.renderSquare(9)}
+                    </div>
                 </Col>
             </Row>
         </Container>
