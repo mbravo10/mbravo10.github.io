@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/mbravo10.github.io/static/css/main.fa427d25.chunk.css",
-    "main.js": "/mbravo10.github.io/static/js/main.6806ca30.chunk.js",
-    "main.js.map": "/mbravo10.github.io/static/js/main.6806ca30.chunk.js.map",
-    "runtime-main.js": "/mbravo10.github.io/static/js/runtime-main.292a572e.js",
-    "runtime-main.js.map": "/mbravo10.github.io/static/js/runtime-main.292a572e.js.map",
+    "main.js": "/mbravo10.github.io/static/js/main.08630178.chunk.js",
+    "main.js.map": "/mbravo10.github.io/static/js/main.08630178.chunk.js.map",
+    "runtime-main.js": "/mbravo10.github.io/static/js/runtime-main.b52a14d5.js",
+    "runtime-main.js.map": "/mbravo10.github.io/static/js/runtime-main.b52a14d5.js.map",
     "static/css/2.ef9168ec.chunk.css": "/mbravo10.github.io/static/css/2.ef9168ec.chunk.css",
-    "static/js/2.e5c80a2e.chunk.js": "/mbravo10.github.io/static/js/2.e5c80a2e.chunk.js",
-    "static/js/2.e5c80a2e.chunk.js.map": "/mbravo10.github.io/static/js/2.e5c80a2e.chunk.js.map",
-    "static/js/3.4d1ba509.chunk.js": "/mbravo10.github.io/static/js/3.4d1ba509.chunk.js",
-    "static/js/3.4d1ba509.chunk.js.map": "/mbravo10.github.io/static/js/3.4d1ba509.chunk.js.map",
+    "static/js/2.2d3b9685.chunk.js": "/mbravo10.github.io/static/js/2.2d3b9685.chunk.js",
+    "static/js/2.2d3b9685.chunk.js.map": "/mbravo10.github.io/static/js/2.2d3b9685.chunk.js.map",
+    "static/js/3.89fe6979.chunk.js": "/mbravo10.github.io/static/js/3.89fe6979.chunk.js",
+    "static/js/3.89fe6979.chunk.js.map": "/mbravo10.github.io/static/js/3.89fe6979.chunk.js.map",
     "index.html": "/mbravo10.github.io/index.html",
     "static/css/2.ef9168ec.chunk.css.map": "/mbravo10.github.io/static/css/2.ef9168ec.chunk.css.map",
     "static/css/main.fa427d25.chunk.css.map": "/mbravo10.github.io/static/css/main.fa427d25.chunk.css.map",
-    "static/js/2.e5c80a2e.chunk.js.LICENSE.txt": "/mbravo10.github.io/static/js/2.e5c80a2e.chunk.js.LICENSE.txt"
+    "static/js/2.2d3b9685.chunk.js.LICENSE.txt": "/mbravo10.github.io/static/js/2.2d3b9685.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.292a572e.js",
+    "static/js/runtime-main.b52a14d5.js",
     "static/css/2.ef9168ec.chunk.css",
-    "static/js/2.e5c80a2e.chunk.js",
+    "static/js/2.2d3b9685.chunk.js",
     "static/css/main.fa427d25.chunk.css",
-    "static/js/main.6806ca30.chunk.js"
+    "static/js/main.08630178.chunk.js"
   ]
 }
