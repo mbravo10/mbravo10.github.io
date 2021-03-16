@@ -1,11 +1,10 @@
-import './styles/gameboard.css';
+import "./styles/gameboard.css";
 
-export default function Square(props){
-    return(
-    <button class="box" 
-    onClick={props.onClick}
-    >
-        {props.val}
+export default function Square(props) {
+  return (
+    <button className="box" onClick={props.onClick}>
+      {" "}
+      {props.val}{" "}
     </button>
-    );
+  );
 }
