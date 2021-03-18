@@ -3,6 +3,7 @@ import { Container, Jumbotron, Button, Row, Col } from "react-bootstrap";
 import React from "react";
 import Square from "./Square";
 import Gamestatus from "./Gamestatus";
+import Gamewinner from "../Gamewinner";
 
 export default class Gameboard extends React.Component {
   constructor(props) {
@@ -43,7 +44,7 @@ export default class Gameboard extends React.Component {
           </p>
         </Jumbotron>
         <Row className="justify-content-md-center">
-          <Col sm={{ span: 5, offset: 2 }}>
+          <Col sm={{ span: 4.1, offset: 3 }}>
             <div className="game-board">
               {this.props.gameArray.map((x, index) =>
                 this.renderSquare(x, index)
@@ -52,6 +53,7 @@ export default class Gameboard extends React.Component {
           </Col>
           <Col>
             <Gamestatus currentP={this.state.isXsTurn} />
+            <Gamewinner values={this.state.value} />
           </Col>
         </Row>
       </Container>
