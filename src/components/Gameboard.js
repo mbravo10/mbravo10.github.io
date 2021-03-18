@@ -44,17 +44,19 @@ export default class Gameboard extends React.Component {
           </p>
         </Jumbotron>
         <Row className="justify-content-md-center">
-          <Col sm={{ span: 4.1, offset: 3 }}>
-            <div className="game-board">
-              {this.props.gameArray.map((x, index) =>
-                this.renderSquare(x, index)
-              )}
-            </div>
-          </Col>
-          <Col>
-            <Gamestatus currentP={this.state.isXsTurn} />
-            <Gamewinner values={this.state.value} />
-          </Col>
+          <Row>
+            <Col>
+              <div className="game-board">
+                {this.props.gameArray.map((x, index) =>
+                  this.renderSquare(x, index)
+                )}
+              </div>
+            </Col>
+            <Col>
+              <Gamestatus currentP={this.state.isXsTurn} />
+              <Gamewinner values={this.state.value} />
+            </Col>
+          </Row>
         </Row>
       </Container>
     );
