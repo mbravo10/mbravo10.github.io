@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/mbravo10.github.io/static/css/main.fa427d25.chunk.css",
-    "main.js": "/mbravo10.github.io/static/js/main.f67a113e.chunk.js",
-    "main.js.map": "/mbravo10.github.io/static/js/main.f67a113e.chunk.js.map",
+    "main.js": "/mbravo10.github.io/static/js/main.14538e23.chunk.js",
+    "main.js.map": "/mbravo10.github.io/static/js/main.14538e23.chunk.js.map",
     "runtime-main.js": "/mbravo10.github.io/static/js/runtime-main.92d66e83.js",
     "runtime-main.js.map": "/mbravo10.github.io/static/js/runtime-main.92d66e83.js.map",
     "static/css/2.ef9168ec.chunk.css": "/mbravo10.github.io/static/css/2.ef9168ec.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.ef9168ec.chunk.css",
     "static/js/2.5f33aa62.chunk.js",
     "static/css/main.fa427d25.chunk.css",
-    "static/js/main.f67a113e.chunk.js"
+    "static/js/main.14538e23.chunk.js"
   ]
 }
