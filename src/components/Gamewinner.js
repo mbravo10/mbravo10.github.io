@@ -1,5 +1,5 @@
 import Alert from "react-bootstrap/Alert";
-import Winner from "./components/Logic";
+import Winner from "./Logic";
 
 export default function Gamewinner(props) {
   return (

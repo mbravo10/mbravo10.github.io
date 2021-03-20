@@ -1,3 +1,4 @@
+import Winner from "./Logic";
 import "./styles/gameboard.css";
 
 export default function Square(props) {

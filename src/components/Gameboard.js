@@ -1,9 +1,9 @@
-import "./styles/gameboard.css";
 import { Container, Jumbotron, Button, Row, Col } from "react-bootstrap";
 import React from "react";
 import Square from "./Square";
 import Gamestatus from "./Gamestatus";
-import Gamewinner from "../Gamewinner";
+import Gamewinner from "./Gamewinner";
+import "./styles/gameboard.css";
 
 export default class Gameboard extends React.Component {
   constructor(props) {
@@ -25,7 +25,10 @@ export default class Gameboard extends React.Component {
       <Square
         key={index}
         val={this.state.value[i]}
-        onClick={() => this.handleClick(i)}
+        onClick={(e) => {
+          e.target.disabled = true;
+          this.handleClick(i);
+        }}
       />
     );
   }
