@@ -11,15 +11,18 @@ export default function ResetButton(props) {
     <>
       <Button as="input" type="reset" value="Reset" onClick={handleShow} />
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Reset Game?</Modal.Title>
-        </Modal.Header>
         <Modal.Body>Are you sure you want to reset?</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             No
           </Button>
-          <Button variant="primary" onClick={props.onClick}>
+          <Button
+            variant="primary"
+            onClick={() => {
+              props.onClick();
+              handleClose();
+            }}
+          >
             Yes
           </Button>
         </Modal.Footer>
