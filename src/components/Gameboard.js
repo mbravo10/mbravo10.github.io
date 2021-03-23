@@ -3,7 +3,9 @@ import React from "react";
 import Square from "./Square";
 import Gamestatus from "./Gamestatus";
 import Gamewinner from "./Gamewinner";
+import Resetbutton from "./Resetbutton";
 import "./styles/gameboard.css";
+import winner from "./Logic";
 
 export default class Gameboard extends React.Component {
   constructor(props) {
@@ -11,13 +13,31 @@ export default class Gameboard extends React.Component {
     this.state = {
       value: Array(9).fill(null),
       isXsTurn: true,
+      isDisabled: false,
     };
+
+    this.baseState = this.state;
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.value !== this.state.value) {
+      return (
+        <div className="game-board">
+          {this.props.gameArray.map((x, index) => this.renderSquare(x, index))}
+        </div>
+      );
+    }
+  }
+
+  handleReset() {
+    this.setState(this.baseState);
   }
 
   handleClick(i) {
     const square = this.state.value.slice();
     this.state.isXsTurn ? (square[i] = "X") : (square[i] = "O");
     this.setState({ value: square, isXsTurn: !this.state.isXsTurn });
+    if (winner(square)) this.setState({ isDisabled: true });
   }
 
   renderSquare(i, index) {
@@ -25,8 +45,8 @@ export default class Gameboard extends React.Component {
       <Square
         key={index}
         val={this.state.value[i]}
-        onClick={(e) => {
-          e.target.disabled = true;
+        isDisabled={this.state.isDisabled}
+        onClick={() => {
           this.handleClick(i);
         }}
       />
@@ -58,6 +78,7 @@ export default class Gameboard extends React.Component {
             <Col>
               <Gamestatus currentP={this.state.isXsTurn} />
               <Gamewinner values={this.state.value} />
+              <Resetbutton onClick={() => this.handleReset()} />
             </Col>
           </Row>
         </Row>
