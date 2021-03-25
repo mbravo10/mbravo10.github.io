@@ -1,6 +1,6 @@
 .game-board {
     display: grid;
-    
+    box-shadow: 5px 20px 30px #1f2833;
     grid-template-rows: 200px 200px 200px;
     grid-template-columns: 200px 200px 200px;
 }
@@ -12,8 +12,12 @@
     font-size: xx-large;
     color:#45A29E;
 }
+.box:disabled{
+    opacity: 0.75; 
+    cursor: not-allowed;
+
+}
 
 body{
     background: #c5c6c7;
-
 }
