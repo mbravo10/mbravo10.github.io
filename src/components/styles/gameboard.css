@@ -1,12 +1,19 @@
 .game-board {
     display: grid;
+    
     grid-template-rows: 200px 200px 200px;
     grid-template-columns: 200px 200px 200px;
 }
 
 .box {
-    background: #444;
+    background: #1f2833;
     border: 1px solid #555;
     text-align: center;
     font-size: xx-large;
+    color:#45A29E;
+}
+
+body{
+    background: #c5c6c7;
+
 }

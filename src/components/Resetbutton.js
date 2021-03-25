@@ -9,7 +9,13 @@ export default function ResetButton(props) {
 
   return (
     <>
-      <Button as="input" type="reset" value="Reset" onClick={handleShow} />
+      <Button
+        as="input"
+        type="reset"
+        value="Reset"
+        disabled={show}
+        onClick={handleShow}
+      />
       <Modal show={show} onHide={handleClose}>
         <Modal.Body>Are you sure you want to reset?</Modal.Body>
         <Modal.Footer>

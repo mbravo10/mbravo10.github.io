@@ -3,9 +3,9 @@ import Winner from "./Logic";
 
 export default function Gamewinner(props) {
   return (
-    <Alert variant="info">
+    <Alert variant={Winner(props.values) ? "success" : "info"}>
       {Winner(props.values)
-        ? `Winner is ${Winner(props.values)}`
+        ? `Congratulations player ${Winner(props.values)}!`
         : "No winner yet"}
     </Alert>
   );

@@ -4,8 +4,8 @@ import Square from "./Square";
 import Gamestatus from "./Gamestatus";
 import Gamewinner from "./Gamewinner";
 import Resetbutton from "./Resetbutton";
+import Winner from "./Logic";
 import "./styles/gameboard.css";
-import winner from "./Logic";
 
 export default class Gameboard extends React.Component {
   constructor(props) {
@@ -14,12 +14,13 @@ export default class Gameboard extends React.Component {
       value: Array(9).fill(null),
       isXsTurn: true,
       isDisabled: false,
+      isLoading: false,
     };
 
     this.baseState = this.state;
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(_, prevState) {
     if (prevState.value !== this.state.value) {
       return (
         <div className="game-board">
@@ -33,11 +34,15 @@ export default class Gameboard extends React.Component {
     this.setState(this.baseState);
   }
 
+  simulateNetworkResponse() {
+    return new Promise((resolve) => setTimeout(resolve, 1000));
+  }
+
   handleClick(i) {
     const square = this.state.value.slice();
     this.state.isXsTurn ? (square[i] = "X") : (square[i] = "O");
     this.setState({ value: square, isXsTurn: !this.state.isXsTurn });
-    if (winner(square)) this.setState({ isDisabled: true });
+    if (Winner(square)) this.setState({ isDisabled: true });
   }
 
   renderSquare(i, index) {
@@ -55,34 +60,42 @@ export default class Gameboard extends React.Component {
 
   render() {
     return (
-      <Container fluid="true">
-        <Jumbotron style={{ backgroundColor: "#0B0C10", color: "#45A29E" }}>
-          <h1>Hello, world!</h1>
-          <p>
-            This is a simple hero unit, a simple jumbotron-style component for
-            calling extra attention to featured content or information.
-          </p>
-          <p>
-            <Button style={{ background: "#45A29E" }}>Learn more</Button>
-          </p>
-        </Jumbotron>
-        <Row className="justify-content-md-center">
-          <Row>
-            <Col>
-              <div className="game-board">
-                {this.props.gameArray.map((x, index) =>
-                  this.renderSquare(x, index)
-                )}
-              </div>
-            </Col>
-            <Col>
-              <Gamestatus currentP={this.state.isXsTurn} />
-              <Gamewinner values={this.state.value} />
-              <Resetbutton onClick={() => this.handleReset()} />
-            </Col>
+      <body>
+        <Container>
+          <Jumbotron
+            style={{
+              backgroundColor: "#1f2833",
+              color: "#45A29E",
+              boxShadow: "5px 20px 30px #1f2833",
+            }}
+          >
+            <h1>Hello, world!</h1>
+            <p>
+              This is a simple hero unit, a simple jumbotron-style component for
+              calling extra attention to featured content or information.
+            </p>
+            <p>
+              <Button>Learn more</Button>
+            </p>
+          </Jumbotron>
+          <Row className="justify-content-md-center">
+            <Row>
+              <Col>
+                <div className="game-board">
+                  {this.props.gameArray.map((x, index) =>
+                    this.renderSquare(x, index)
+                  )}
+                </div>
+              </Col>
+              <Col>
+                <Gamestatus currentP={this.state.isXsTurn} />
+                <Gamewinner values={this.state.value} />
+                <Resetbutton onClick={() => this.handleReset()} />
+              </Col>
+            </Row>
           </Row>
-        </Row>
-      </Container>
+        </Container>
+      </body>
     );
   }
 }
