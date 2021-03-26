@@ -3,7 +3,11 @@
     box-shadow: 5px 20px 30px #1f2833;
     grid-template-rows: 200px 200px 200px;
     grid-template-columns: 200px 200px 200px;
+    
 }
+* {
+    box-sizing: border-box;
+  }
 
 .box {
     background: #1f2833;

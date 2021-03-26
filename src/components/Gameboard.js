@@ -1,11 +1,11 @@
 import {
   Container,
   Jumbotron,
-  Button,
   Row,
   Col,
   Card,
   Toast,
+  Button,
 } from "react-bootstrap";
 import React from "react";
 import Square from "./Square";
@@ -19,14 +19,15 @@ export default class Gameboard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      xWins: 0,
+      oWins: 0,
       value: Array(9).fill(null),
       isXsTurn: true,
       isDisabled: false,
       isLoading: false,
-      xWins: 0,
-      oWins: 0,
     };
-    this.baseState = this.state;
+    const { xWins, oWins, ...baseState } = this.state;
+    this.startState = baseState;
   }
 
   componentDidUpdate(_, prevState) {
@@ -36,24 +37,16 @@ export default class Gameboard extends React.Component {
           {this.props.gameArray.map((x, index) => this.renderSquare(x, index))}
         </div>
       );
-    } else if (
-      prevState.xWins !== this.state.xWins ||
-      prevState.oWins !== this.state.oWins
-    ) {
-      return (
-        <Toast>
-          <Toast.Body>{`Wins for Player X: ${this.state.xWins}`}</Toast.Body>
-        </Toast>
-      );
     }
   }
 
   handleReset() {
-    this.setState(this.baseState);
+    this.setState(this.startState);
   }
 
   handleClick(i) {
     const square = this.state.value.slice();
+    if (square[i]) return;
     this.state.isXsTurn ? (square[i] = "X") : (square[i] = "O");
     this.setState({ value: square, isXsTurn: !this.state.isXsTurn });
     if (Winner(square)) {
@@ -101,31 +94,33 @@ export default class Gameboard extends React.Component {
                 </Toast>
               </Col>
             </Row>
+            <Button variant="primary" onClick={() => window.location.reload()}>
+              {" "}
+              Reset Board and Winners
+            </Button>
           </Jumbotron>
           <Row className="justify-content-md-center">
-            <Row>
-              <Col>
-                <div className="game-board">
-                  {this.props.gameArray.map((x, index) =>
-                    this.renderSquare(x, index)
-                  )}
-                </div>
-              </Col>
-              <Col>
-                <Card
-                  style={{
-                    backgroundColor: "#1f2933",
-                    boxShadow: "5px 20px 30px #1f2833",
-                  }}
-                >
-                  <Card.Body>
-                    <Gamestatus currentP={this.state.isXsTurn} />
-                    <Gamewinner values={this.state.value} />
-                    <Resetbutton onClick={() => this.handleReset()} />
-                  </Card.Body>
-                </Card>
-              </Col>
-            </Row>
+            <Col>
+              <div className="game-board">
+                {this.props.gameArray.map((x, index) =>
+                  this.renderSquare(x, index)
+                )}
+              </div>
+            </Col>
+            <Col>
+              <Card
+                style={{
+                  backgroundColor: "#1f2933",
+                  boxShadow: "5px 20px 30px #1f2833",
+                }}
+              >
+                <Card.Body>
+                  <Gamestatus currentP={this.state.isXsTurn} />
+                  <Gamewinner values={this.state.value} />
+                  <Resetbutton onClick={() => this.handleReset()} />
+                </Card.Body>
+              </Card>
+            </Col>
           </Row>
         </Container>
       </body>
