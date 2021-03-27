@@ -6,7 +6,7 @@ export default function Gamestatus(props) {
       <span className="d-inline-block">
         <h1>
           <Badge variant="info">
-            {`Current player: ${props.currentP ? "X" : "O"}`}
+            {`Current player: ${props.currentP ? "❌" : "⭕️"}`}
           </Badge>
         </h1>
       </span>

@@ -47,7 +47,7 @@ export default class Gameboard extends React.Component {
   handleClick(i) {
     const square = this.state.value.slice();
     if (square[i]) return;
-    this.state.isXsTurn ? (square[i] = "X") : (square[i] = "O");
+    this.state.isXsTurn ? (square[i] = "❌") : (square[i] = "⭕️");
     this.setState({ value: square, isXsTurn: !this.state.isXsTurn });
     if (Winner(square)) {
       this.setState({ isDisabled: true });
@@ -82,19 +82,24 @@ export default class Gameboard extends React.Component {
             }}
           >
             <h1>Tic-Tac-Toe!</h1>
+
             <Row>
               <Col>
                 <Toast>
-                  <Toast.Body>{`Wins for Player X: ${this.state.xWins}`}</Toast.Body>
+                  <Toast.Body>{`Player ❌ wins : ${this.state.xWins}`}</Toast.Body>
                 </Toast>
               </Col>
               <Col>
                 <Toast>
-                  <Toast.Body>{`Wins for Player O: ${this.state.oWins}`}</Toast.Body>
+                  <Toast.Body>{`Player ⭕️ wins : ${this.state.oWins}`}</Toast.Body>
                 </Toast>
               </Col>
             </Row>
-            <Button variant="primary" onClick={() => window.location.reload()}>
+            <Button
+              variant="primary"
+              onClick={() => window.location.reload()}
+              style={{ marginTop: "10px" }}
+            >
               {" "}
               Reset Board and Winners
             </Button>
