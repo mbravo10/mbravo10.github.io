@@ -30,16 +30,6 @@ export default class Gameboard extends React.Component {
     this.startState = baseState;
   }
 
-  componentDidUpdate(_, prevState) {
-    if (prevState.value !== this.state.value) {
-      return (
-        <div className="game-board">
-          {this.props.gameArray.map((x, index) => this.renderSquare(x, index))}
-        </div>
-      );
-    }
-  }
-
   handleReset() {
     this.setState(this.startState);
   }
@@ -72,63 +62,60 @@ export default class Gameboard extends React.Component {
 
   render() {
     return (
-      <body>
-        <Container>
-          <Jumbotron
-            style={{
-              backgroundColor: "#1f2833",
-              color: "#45A29E",
-              boxShadow: "5px 20px 30px #1f2833",
-            }}
-          >
-            <h1>Tic-Tac-Toe!</h1>
+      <Container>
+        <Jumbotron
+          style={{
+            backgroundColor: "#1f2833",
+            color: "#45A29E",
+            boxShadow: "5px 20px 30px #1f2833",
+          }}
+        >
+          <h1>Tic-Tac-Toe!</h1>
 
-            <Row>
-              <Col>
-                <Toast>
-                  <Toast.Body>{`Player ❌ wins : ${this.state.xWins}`}</Toast.Body>
-                </Toast>
-              </Col>
-              <Col>
-                <Toast>
-                  <Toast.Body>{`Player ⭕️ wins : ${this.state.oWins}`}</Toast.Body>
-                </Toast>
-              </Col>
-            </Row>
-            <Button
-              variant="primary"
-              onClick={() => window.location.reload()}
-              style={{ marginTop: "10px" }}
-            >
-              {" "}
-              Reset Board and Winners
-            </Button>
-          </Jumbotron>
-          <Row className="justify-content-md-center">
+          <Row>
             <Col>
-              <div className="game-board">
-                {this.props.gameArray.map((x, index) =>
-                  this.renderSquare(x, index)
-                )}
-              </div>
+              <Toast>
+                <Toast.Body>{`Player ❌  wins : ${this.state.xWins}`}</Toast.Body>
+              </Toast>
             </Col>
             <Col>
-              <Card
-                style={{
-                  backgroundColor: "#1f2933",
-                  boxShadow: "5px 20px 30px #1f2833",
-                }}
-              >
-                <Card.Body>
-                  <Gamestatus currentP={this.state.isXsTurn} />
-                  <Gamewinner values={this.state.value} />
-                  <Resetbutton onClick={() => this.handleReset()} />
-                </Card.Body>
-              </Card>
+              <Toast>
+                <Toast.Body>{`Player ⭕️  wins : ${this.state.oWins}`}</Toast.Body>
+              </Toast>
             </Col>
           </Row>
-        </Container>
-      </body>
+          <Button
+            variant="primary"
+            onClick={() => window.location.reload()}
+            style={{ marginTop: "10px" }}
+          >
+            Reset Board and Winners
+          </Button>
+        </Jumbotron>
+        <Row className="justify-content-md-center">
+          <Col>
+            <div className="game-board">
+              {this.props.gameArray.map((x, index) =>
+                this.renderSquare(x, index)
+              )}
+            </div>
+          </Col>
+          <Col>
+            <Card
+              style={{
+                backgroundColor: "#1f2933",
+                boxShadow: "5px 20px 30px #1f2833",
+              }}
+            >
+              <Card.Body>
+                <Gamestatus currentP={this.state.isXsTurn} />
+                <Gamewinner values={this.state.value} />
+                <Resetbutton onClick={() => this.handleReset()} />
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }
