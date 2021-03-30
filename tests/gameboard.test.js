@@ -14,7 +14,7 @@ describe(
     test("H1 Title has correct text, Tic Tac Toe", async () => {
       // other actions...
       let text = await page.$eval("h1", (el) => el.textContent);
-      expect(text).toBe("Tic-Tac-Toe!");
+      expect(text).toBe("Tic Tac Toe!");
     });
 
     test("Both Players display 0 for their text", async () => {
@@ -22,8 +22,8 @@ describe(
       var res = await page.$$eval(".toast-body", (el) =>
         el.map((x) => x.textContent)
       );
-      expect(res[0]).toBe("Player ❌ wins : 0");
-      expect(res[1]).toBe("Player ⭕️ wins : 0");
+      expect(res[0]).toBe("Player ❌  wins : 0");
+      expect(res[1]).toBe("Player ⭕️  wins : 0");
     });
 
     test("Button can be clicked and value be updated to ❌", async () => {
@@ -47,7 +47,7 @@ describe(
       );
       expect(res).toBe(true);
       expect(winner).toBe("Congratulations player ❌!");
-      expect(toastRes).toBe("Player ❌ wins : 1");
+      expect(toastRes).toBe("Player ❌  wins : 1");
     });
 
     afterAll(async () => browser.close());

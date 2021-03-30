@@ -75,12 +75,12 @@ export default class Gameboard extends React.Component {
           <Row>
             <Col>
               <Toast>
-                <Toast.Body>{`Player ❌  wins : ${this.state.xWins}`}</Toast.Body>
+                <Toast.Body>{`Player ❌ wins : ${this.state.xWins}`}</Toast.Body>
               </Toast>
             </Col>
             <Col>
               <Toast>
-                <Toast.Body>{`Player ⭕️  wins : ${this.state.oWins}`}</Toast.Body>
+                <Toast.Body>{`Player ⭕️ wins : ${this.state.oWins}`}</Toast.Body>
               </Toast>
             </Col>
           </Row>
