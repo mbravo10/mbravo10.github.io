@@ -14,6 +14,7 @@ import Gamewinner from "./Gamewinner";
 import Resetbutton from "./Resetbutton";
 import Winner from "./Logic";
 import "./styles/gameboard.css";
+import Jumboheaders from "./Jumboheader";
 
 export default class Gameboard extends React.Component {
   constructor(props) {
@@ -70,8 +71,7 @@ export default class Gameboard extends React.Component {
             boxShadow: "5px 20px 30px #1f2833",
           }}
         >
-          <h1>Tic-Tac-Toe!</h1>
-
+          <Jumboheaders />
           <Row>
             <Col>
               <Toast>

@@ -2,8 +2,6 @@ const puppeteer = require("puppeteer");
 const timeout = 5000;
 var browser;
 var page;
-// Note: running cleanup afterEach is done automatically for you in @testing-library/react@9.0.0 or higher
-// unmount and cleanup DOM after the test is finished.
 
 describe(
   "Main gameboard component testing functionality",
