@@ -21,9 +21,9 @@ export default function Jumboheaders() {
   useEffect(() => getData(), []);
 
   return (
-    <p>
-      {<h1>{data.gameName}</h1>}
-      {<h4>Welcome, {data.gamePlayer}</h4>}
-    </p>
+    <html>
+      <h1>{data.gameName}</h1>
+      <h4>Welcome, {data.gamePlayer}</h4>
+    </html>
   );
 }
