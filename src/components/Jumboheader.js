@@ -5,7 +5,7 @@ export default function Jumboheaders() {
   const getData = () => {
     fetch("/data.json", {
       headers: {
-        "Content-Type": "text/javascript",
+        "Content-Type": "application/json",
         Accept: "application/json",
       },
     })
